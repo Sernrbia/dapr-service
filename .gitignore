@@ -1,0 +1,9 @@
+dist/
+node_modules/
+coverage/
+idea/
+
+.env
+keycloak.json
+
+.config

@@ -2,7 +2,7 @@
   "name": "dapr-service",
   "version": "1.0.0",
   "description": "Microservice with direct access to DAPR runtime",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +15,28 @@
   "bugs": {
     "url": "https://github.com/Sernrbia/dapr-service/issues"
   },
-  "homepage": "https://github.com/Sernrbia/dapr-service#readme"
+  "homepage": "https://github.com/Sernrbia/dapr-service#readme",
+  "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.14",
+    "@types/express-session": "^1.17.5",
+    "@types/jest": "^29.1.2",
+    "@types/morgan": "^1.9.3",
+    "@types/node": "^18.8.5",
+    "jest": "^29.1.2",
+    "ts-jest": "^29.0.3",
+    "ts-node-dev": "^2.0.0",
+    "tsc-alias": "^1.4.1",
+    "tsconfig-paths": "^4.1.0",
+    "typescript": "^4.8.4"
+  },
+  "dependencies": {
+    "@dapr/dapr": "^2.5.0",
+    "axios": "^1.2.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-async-handler": "^1.2.0",
+    "express-session": "^1.17.3"
+  }
 }
