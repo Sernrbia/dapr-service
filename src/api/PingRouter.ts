@@ -1,9 +1,8 @@
-import HttpRouter from "@app/HttpRouter"
 import { Router } from "express";
+import HttpRouter from "../HttpRouter";
 
 export default class PingRouter extends HttpRouter {
-    router(): Router {
-        return Router()
-            .get("/", (req, res) => res.json({ message: "OK" }))
-    }
+  router(): Router {
+    return Router().get("/", (_req, res) => res.json({ message: "OK" }));
+  }
 }

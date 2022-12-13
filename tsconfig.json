@@ -6,7 +6,8 @@
     "baseUrl": "./",
     "paths": {
       "@businessGuard/*": ["./src/businessGuard/*"],
-      "@app/*": ["./src/*"]
+      "@app/*": ["./src/*"],
+      "@config/*": ["./src/config/*"]
     },
     "outDir": "./dist",
     "esModuleInterop": true,
