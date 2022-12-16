@@ -4,6 +4,7 @@
   "description": "Microservice with direct access to DAPR runtime",
   "main": "index.ts",
   "scripts": {
+    "dev": "ts-node-dev -r tsconfig-paths/register -r loadEnv src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

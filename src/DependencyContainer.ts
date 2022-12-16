@@ -19,7 +19,7 @@ export default class DependencyContainer {
   dependency(env: any): Dependency {
     const config = new Config(env).config;
 
-    const { service } = this.load(env);
+    const { service } = this.load(config);
 
     const controllers = {
       service: new ServiceController(service)
@@ -32,7 +32,7 @@ export default class DependencyContainer {
   }
 
   private load(config: ConfigData): Services {
-    console.log("REAL services loaded.");
+    console.log("service loaded.");
     return {
       service: new ServiceInstance(config.dapr)
     };
