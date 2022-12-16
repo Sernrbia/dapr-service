@@ -2,10 +2,11 @@
   "name": "dapr-service",
   "version": "1.0.0",
   "description": "Microservice with direct access to DAPR runtime",
-  "main": "index.ts",
+  "main": "index.js",
   "scripts": {
     "dev": "ts-node-dev -r tsconfig-paths/register -r loadEnv src/index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc && tsc-alias -p tsconfig.json"
   },
   "repository": {
     "type": "git",
