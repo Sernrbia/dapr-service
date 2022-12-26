@@ -12,7 +12,6 @@ export default class ServiceInstance implements Service {
   private readonly axios: Axios;
 
   constructor(config: DaprConfig) {
-    console.log(config)
     const { host, port } = config;
     this.axios = axios.create({
       baseURL: `${host}:${port}`

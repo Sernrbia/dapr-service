@@ -10,7 +10,7 @@ export type ErrorResponse = {
 };
 
 export default abstract class HttpServer {
-  private port: number;
+  private port: string;
 
   constructor({ server }: ConfigData) {
     const { port } = server;
@@ -25,8 +25,16 @@ export default abstract class HttpServer {
       .use(express.json())
       .use(express.urlencoded({ limit: "50mb", extended: true, parameterLimit: 1000000 }));
 
+    this.router(app);
+
+    // app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
+    //   const { errorCode, message, status } = this.handleError(err);
+    //   res.status(status).json({ message, errorCode });
+    // });
+
     app.listen(this.port, () => console.log(`Listening on port ${this.port}...`));
   }
 
   protected abstract router(app: express.Application): void;
+  // protected abstract handleError(err: Error): ErrorResponse;
 }

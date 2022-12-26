@@ -1,5 +1,5 @@
 export interface ServiceConfig {
-  port: number;
+  port: string;
 }
 
 export interface DaprConfig extends ServiceConfig {
@@ -11,7 +11,3 @@ export type ConfigData = {
   server: ServiceConfig;
   dapr: DaprConfig;
 };
-
-export function getData<T>(value: T, missing: T): T {
-  return value ?? missing;
-}
