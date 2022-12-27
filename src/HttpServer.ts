@@ -32,6 +32,30 @@ export default abstract class HttpServer {
     //   res.status(status).json({ message, errorCode });
     // });
 
+    app.get("/dapr/subscribe", (_req, res) => {
+      console.log("GET");
+      res.json([
+        {
+          pubsubname: "pubsub",
+          topic: "checkout",
+          routes: {
+            rules: [
+              {
+                match: 'event.type == "order"',
+                path: "/orders"
+              }
+            ],
+            default: "/products"
+          }
+        }
+      ]);
+    });
+
+    app.post("/orders", (req, res) => {
+      console.log(req.body);
+      res.sendStatus(200);
+    });
+
     app.listen(this.port, () => console.log(`Listening on port ${this.port}...`));
   }
 
